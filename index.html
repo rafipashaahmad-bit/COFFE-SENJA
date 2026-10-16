@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXTGEN LAB | Ilmu Pengetahuan & Teknologi</title>
+
+    <meta name="description" content="NEXTGEN LAB adalah website informasi dan eksplorasi ilmu pengetahuan dan teknologi masa depan.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0614;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(13, 6, 20, 0.78);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 105, 180, 0.15);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff5ebc;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff69b4;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            border-radius: 30px;
+
+            text-decoration: none;
+            color: white;
+
+            background: linear-gradient(135deg, #ff4fac, #9b5cff);
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 80, 180, 0.5);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            padding: 150px 8% 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(255, 56, 160, 0.25),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 20% 70%,
+                    rgba(145, 70, 255, 0.18),
+                    transparent 30%
+                ),
+
+                #0d0614;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border: 1px solid rgba(255, 105, 180, 0.4);
+
+            border-radius: 30px;
+
+            color: #ff8aca;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+
+            background: rgba(255, 105, 180, 0.05);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff5ebc,
+                    #d48aff
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #c9b8d0;
+
+            font-size: 18px;
+
+            max-width: 580px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4fac,
+                    #b657ff
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 35px
+                rgba(255, 65, 170, 0.25);
+        }
+
+        .secondary-btn {
+            border: 1px solid #49354f;
+
+            color: white;
+        }
+
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* ================= HERO ANIMATION ================= */
+
+        .hero-visual {
+            width: 420px;
+            height: 420px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            position: absolute;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255, 105, 180, 0.25);
+        }
+
+        .circle.one {
+            width: 420px;
+            height: 420px;
+        }
+
+        .circle.two {
+            width: 300px;
+            height: 300px;
+        }
+
+        .circle.three {
+            width: 180px;
+            height: 180px;
+        }
+
+        .core {
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4fac,
+                    #9d5cff
+                );
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 42px;
+
+            box-shadow:
+                0 0 40px
+                rgba(255, 74, 172, 0.5),
+
+                0 0 100px
+                rgba(156, 86, 255, 0.3);
+
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .dot {
+            position: absolute;
+
+            width: 12px;
+            height: 12px;
+
+            background: #ff6fc4;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 15px #ff5ebc;
+        }
+
+        .dot.one {
+            top: 30px;
+            left: 100px;
+        }
+
+        .dot.two {
+            right: 40px;
+            top: 170px;
+        }
+
+        .dot.three {
+            bottom: 55px;
+            left: 90px;
+        }
+
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #ff66ba;
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+
+            margin:
+                10px 0 15px;
+        }
+
+        .section-title p {
+            color: #a99aaa;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #110819;
+        }
+
+        .about-container {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #b9aabe;
+
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 82, 174, 0.1),
+                    rgba(122, 68, 190, 0.08)
+                );
+
+            border:
+                1px solid
+                rgba(255, 105, 180, 0.15);
+        }
+
+        .about-card h3 {
+            color: #ff76c3;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* ================= TECHNOLOGY ================= */
+
+        .tech-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .tech-card {
+            padding: 30px 25px;
+
+            border-radius: 20px;
+
+            background: #150b1c;
+
+            border:
+                1px solid #2b1b32;
+
+            transition: 0.35s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #ff5db8;
+
+            box-shadow:
+                0 15px 40px
+                rgba(255, 70, 170, 0.12);
+        }
+
+        .tech-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 82, 174, 0.1);
+
+            color: #ff6cbd;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .tech-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .tech-card p {
+            color: #a99aaa;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= ARTICLES ================= */
+
+        .articles {
+            background: #110819;
+        }
+
+        .article-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .article-card {
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: #180c20;
+
+            border:
+                1px solid #2b1b32;
+
+            transition: 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #ff5db8;
+        }
+
+        .article-image {
+            height: 180px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 73, 170, 0.7),
+                    rgba(117, 60, 190, 0.8)
+                );
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-content small {
+            color: #ff6fc1;
+        }
+
+        .article-content h3 {
+            margin: 10px 0;
+        }
+
+        .article-content p {
+            color: #a99aaa;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            border: none;
+
+            background: none;
+
+            color: #ff70c2;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            padding: 0;
+
+            transition: 0.3s;
+        }
+
+        .read-more:hover {
+            color: white;
+
+            transform: translateX(3px);
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            text-align: center;
+        }
+
+        .stat {
+            padding: 35px 20px;
+
+            border-radius: 20px;
+
+            background: #160b1d;
+
+            border:
+                1px solid #2b1b32;
+        }
+
+        .stat h3 {
+            font-size: 38px;
+
+            color: #ff65b9;
+        }
+
+        .stat p {
+            color: #a99aaa;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            text-align: center;
+
+            padding: 100px 8%;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 70, 170, 0.18),
+                    transparent 50%
+                );
+        }
+
+        .cta h2 {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #b7a9ba;
+
+            max-width: 600px;
+
+            margin:
+                auto auto 30px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding:
+                50px 8% 25px;
+
+            background: #09040d;
+
+            border-top:
+                1px solid #24162a;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 30px;
+
+            margin-bottom: 35px;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-brand h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer-brand h2 span {
+            color: #ff61b8;
+        }
+
+        .footer-brand p {
+            color: #938898;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 40px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+
+            color: #b7a9ba;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff66ba;
+        }
+
+        .copyright {
+            text-align: center;
+
+            border-top:
+                1px solid #211523;
+
+            padding-top: 20px;
+
+            color: #716875;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= ARTICLE MODAL ================= */
+
+        .article-modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            background:
+                rgba(5, 2, 8, 0.88);
+
+            backdrop-filter:
+                blur(10px);
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .article-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+
+            max-width: 700px;
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1b0c24,
+                    #100714
+                );
+
+            border:
+                1px solid
+                rgba(255, 105, 180, 0.3);
+
+            box-shadow:
+                0 0 60px
+                rgba(255, 70, 170, 0.2);
+
+            position: relative;
+
+            animation:
+                modalShow 0.3s ease;
+        }
+
+        @keyframes modalShow {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px)
+                    scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+
+            right: 20px;
+            top: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background:
+                rgba(255, 105, 180, 0.1);
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            background: #ff5ebc;
+
+            transform: rotate(90deg);
+        }
+
+        .modal-category {
+            color: #ff69b4;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            font-weight: bold;
+        }
+
+        .modal-content h2 {
+            font-size: 32px;
+
+            margin: 10px 0 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff5ebc,
+                    #c47cff
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color:
+                transparent;
+        }
+
+        .modal-content p {
+            color: #c6b7ca;
+
+            margin-bottom: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                transform: scale(0.8);
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding:
+                    16px 5%;
+            }
+
+            section {
+                padding:
+                    75px 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero-visual {
+                width: 320px;
+
+                height: 320px;
+
+                transform:
+                    scale(0.75);
+            }
+
+            .circle.one {
+                width: 320px;
+                height: 320px;
+            }
+
+            .circle.two {
+                width: 230px;
+                height: 230px;
+            }
+
+            .circle.three {
+                width: 140px;
+                height: 140px;
+            }
+
+            .tech-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .cta h2 {
+                font-size: 35px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .modal-content {
+                padding: 30px 22px;
+            }
+
+            .modal-content h2 {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            NEXTGEN <span>LAB</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    Tentang
+                </a>
+            </li>
+
+            <li>
+                <a href="#technology">
+                    Teknologi
+                </a>
+            </li>
+
+            <li>
+                <a href="#articles">
+                    Artikel
+                </a>
+            </li>
+
+        </ul>
+
+        <a
+            href="#explore"
+            class="nav-button"
+        >
+            Eksplorasi
+        </a>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✦ SCIENCE • TECHNOLOGY • FUTURE
+            </div>
+
+            <h1>
+
+                Explore The
+
+                <span>
+                    Next Generation.
+                </span>
+
+            </h1>
+
+            <p>
+                NEXTGEN LAB adalah ruang eksplorasi
+                ilmu pengetahuan dan teknologi untuk
+                memahami inovasi yang membentuk
+                masa depan manusia.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#technology"
+                    class="primary-btn"
+                >
+                    Jelajahi Teknologi
+                </a>
+
+                <a
+                    href="#about"
+                    class="secondary-btn"
+                >
+                    Tentang NEXTGEN LAB
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="circle one"></div>
+
+            <div class="circle two"></div>
+
+            <div class="circle three"></div>
+
+            <div class="dot one"></div>
+
+            <div class="dot two"></div>
+
+            <div class="dot three"></div>
+
+            <div class="core">
+                🧬
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <div class="section-title">
+
+            <span>
+                ABOUT US
+            </span>
+
+            <h2>
+                Mengenal NEXTGEN LAB
+            </h2>
+
+            <p>
+                Tempat untuk belajar, mengeksplorasi,
+                dan memahami perkembangan ilmu
+                pengetahuan serta teknologi.
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>
+                    Ilmu untuk memahami dunia.
+                </h3>
+
+                <p>
+                    Perkembangan teknologi berlangsung
+                    sangat cepat. Artificial Intelligence,
+                    robotika, bioteknologi, energi terbarukan,
+                    dan teknologi luar angkasa terus membuka
+                    peluang baru.
+                </p>
+
+                <p>
+                    NEXTGEN LAB hadir sebagai media edukasi
+                    yang menyajikan informasi teknologi
+                    dengan bahasa yang sederhana,
+                    menarik, dan mudah dipahami.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    🔬 Our Mission
+                </h3>
+
+                <p>
+                    Mendorong generasi muda untuk memiliki
+                    rasa ingin tahu, berpikir kritis,
+                    dan memahami bagaimana ilmu pengetahuan
+                    serta teknologi dapat digunakan untuk
+                    menciptakan masa depan yang lebih baik.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <section
+        id="technology"
+    >
+
+        <div class="section-title">
+
+            <span>
+                TECHNOLOGY
+            </span>
+
+            <h2>
+                Jelajahi Dunia Teknologi
+            </h2>
+
+            <p>
+                Kenali berbagai bidang teknologi yang
+                sedang berkembang dan berpotensi
+                membentuk masa depan.
+            </p>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    Teknologi yang memungkinkan komputer
+                    mempelajari pola dan membantu manusia
+                    menyelesaikan berbagai permasalahan.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Biotechnology
+                </h3>
+
+                <p>
+                    Pemanfaatan organisme atau sistem
+                    biologis untuk menghasilkan inovasi
+                    di bidang kesehatan, pangan,
+                    dan lingkungan.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Space Technology
+                </h3>
+
+                <p>
+                    Teknologi yang digunakan untuk
+                    mengeksplorasi luar angkasa,
+                    satelit, planet, dan fenomena
+                    astronomi.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="tech-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Green Technology
+                </h3>
+
+                <p>
+                    Inovasi teknologi yang mendukung
+                    efisiensi energi, pengurangan limbah,
+                    dan keberlanjutan lingkungan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ARTICLES ================= -->
+
+    <section
+        class="articles"
+        id="articles"
+    >
+
+        <div class="section-title">
+
+            <span>
+                KNOWLEDGE
+            </span>
+
+            <h2>
+                Pengetahuan Terbaru
+            </h2>
+
+            <p>
+                Temukan berbagai informasi menarik
+                mengenai ilmu pengetahuan dan teknologi.
+            </p>
+
+        </div>
+
+
+        <div class="article-grid">
+
+
+            <!-- ARTIKEL 1 -->
+
+            <div class="article-card">
+
+                <div class="article-image">
+                    🤖
+                </div>
+
+                <div class="article-content">
+
+                    <small>
+                        ARTIFICIAL INTELLIGENCE
+                    </small>
+
+                    <h3>
+                        Bagaimana AI Bekerja?
+                    </h3>
+
+                    <p>
+                        Mengenal konsep dasar artificial
+                        intelligence dan bagaimana komputer
+                        dapat memproses data.
+                    </p>
+
+                    <button
+                        class="read-more"
+                        onclick="openArticle('ai')"
+                    >
+                        Baca Selengkapnya →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIKEL 2 -->
+
+            <div class="article-card">
+
+                <div class="article-image">
+                    🧠
+                </div>
+
+                <div class="article-content">
+
+                    <small>
+                        SCIENCE
+                    </small>
+
+                    <h3>
+                        Rahasia Otak Manusia
+                    </h3>
+
+                    <p>
+                        Mengenal salah satu sistem paling
+                        kompleks yang terus dipelajari
+                        oleh para ilmuwan.
+                    </p>
+
+                    <button
+                        class="read-more"
+                        onclick="openArticle('otak')"
+                    >
+                        Baca Selengkapnya →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTIKEL 3 -->
+
+            <div class="article-card">
+
+                <div class="article-image">
+                    🚀
+                </div>
+
+                <div class="article-content">
+
+                    <small>
+                        SPACE TECHNOLOGY
+                    </small>
+
+                    <h3>
+                        Masa Depan Eksplorasi Antariksa
+                    </h3>
+
+                    <p>
+                        Teknologi baru membuka kesempatan
+                        bagi manusia untuk mempelajari
+                        lingkungan luar bumi.
+                    </p>
+
+                    <button
+                        class="read-more"
+                        onclick="openArticle('space')"
+                    >
+                        Baca Selengkapnya →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section>
+
+        <div class="section-title">
+
+            <span>
+                NEXTGEN LAB
+            </span>
+
+            <h2>
+                Explore More
+            </h2>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <h3>
+                    04
+                </h3>
+
+                <p>
+                    Bidang Teknologi
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3>
+                    10+
+                </h3>
+
+                <p>
+                    Topik Sains
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3>
+                    ∞
+                </h3>
+
+                <p>
+                    Ide Masa Depan
+                </p>
+
+            </div>
+
+
+            <div class="stat">
+
+                <h3>
+                    24/7
+                </h3>
+
+                <p>
+                    Rasa Ingin Tahu
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section
+        class="cta"
+        id="explore"
+    >
+
+        <h2>
+            Masa Depan Dimulai dari Rasa Ingin Tahu.
+        </h2>
+
+        <p>
+            Terus belajar, terus bertanya, dan terus
+            mengeksplorasi. Karena setiap penemuan besar
+            dimulai dari sebuah pertanyaan.
+        </p>
+
+        <a
+            href="#home"
+            class="primary-btn"
+        >
+            Mulai Eksplorasi ✦
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h2>
+                    NEXTGEN
+                    <span>
+                        LAB
+                    </span>
+                </h2>
+
+                <p>
+                    Platform edukasi dan eksplorasi
+                    ilmu pengetahuan serta teknologi
+                    untuk generasi masa depan.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Beranda
+                </a>
+
+                <a href="#about">
+                    Tentang
+                </a>
+
+                <a href="#technology">
+                    Teknologi
+                </a>
+
+                <a href="#articles">
+                    Artikel
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 NEXTGEN LAB.
+            Explore • Learn • Innovate.
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= ARTICLE MODAL ================= -->
+
+    <div
+        class="article-modal"
+        id="articleModal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                onclick="closeArticle()"
+            >
+                ×
+            </button>
+
+            <div id="articleContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function openArticle(article) {
+
+            const modal =
+                document.getElementById(
+                    "articleModal"
+                );
+
+            const content =
+                document.getElementById(
+                    "articleContent"
+                );
+
+
+            /* ================= ARTIKEL AI ================= */
+
+            if (article === "ai") {
+
+                content.innerHTML = `
+
+                    <div class="modal-category">
+                        ARTIFICIAL INTELLIGENCE
+                    </div>
+
+                    <h2>
+                        Bagaimana AI Bekerja?
+                    </h2>
+
+                    <p>
+                        Artificial Intelligence atau AI
+                        merupakan teknologi yang memungkinkan
+                        komputer melakukan berbagai tugas
+                        yang biasanya membutuhkan kemampuan
+                        berpikir manusia.
+                    </p>
+
+                    <p>
+                        AI bekerja dengan memanfaatkan data,
+                        algoritma, dan model pembelajaran
+                        untuk mengenali pola.
+                    </p>
+
+                    <p>
+                        Dalam prosesnya, sistem AI dapat
+                        mempelajari berbagai informasi dari
+                        data yang diberikan. Data tersebut
+                        kemudian digunakan untuk membantu
+                        sistem menghasilkan suatu keluaran
+                        berdasarkan pola yang telah dipelajari.
+                    </p>
+
+                    <p>
+                        Saat ini AI digunakan dalam berbagai
+                        bidang, mulai dari pendidikan,
+                        kesehatan, bisnis, transportasi,
+                        hingga industri kreatif.
+                    </p>
+
+                    <p>
+                        Perkembangan AI membuat teknologi
+                        semakin dekat dengan kehidupan
+                        sehari-hari dan membuka berbagai
+                        kemungkinan baru di masa depan.
+                    </p>
+
+                `;
+
+            }
+
+
+            /* ================= ARTIKEL OTAK ================= */
+
+            else if (article === "otak") {
+
+                content.innerHTML = `
+
+                    <div class="modal-category">
+                        SCIENCE
+                    </div>
+
+                    <h2>
+                        Rahasia Otak Manusia
+                    </h2>
+
+                    <p>
+                        Otak manusia merupakan salah satu
+                        organ paling kompleks dalam tubuh.
+                        Otak memiliki peran penting dalam
+                        mengatur berbagai aktivitas tubuh.
+                    </p>
+
+                    <p>
+                        Selain mengatur gerakan dan fungsi
+                        tubuh, otak juga berperan dalam proses
+                        berpikir, mengingat, belajar,
+                        mengambil keputusan, dan memproses
+                        berbagai informasi.
+                    </p>
+
+                    <p>
+                        Otak memiliki jaringan sel saraf
+                        yang saling berkomunikasi.
+                        Komunikasi tersebut memungkinkan
+                        manusia menerima informasi dari
+                        lingkungan dan memberikan respons.
+                    </p>
+
+                    <p>
+                        Para ilmuwan terus mempelajari
+                        bagaimana otak bekerja untuk memahami
+                        proses belajar, memori, dan berbagai
+                        fungsi lainnya.
+                    </p>
+
+                    <p>
+                        Penelitian mengenai otak juga membantu
+                        perkembangan berbagai teknologi
+                        di bidang kesehatan dan ilmu
+                        pengetahuan.
+                    </p>
+
+                `;
+
+            }
+
+
+            /* ================= ARTIKEL ANTARIKSA ================= */
+
+            else if (article === "space") {
+
+                content.innerHTML = `
+
+                    <div class="modal-category">
+                        SPACE TECHNOLOGY
+                    </div>
+
+                    <h2>
+                        Masa Depan Eksplorasi Antariksa
+                    </h2>
+
+                    <p>
+                        Eksplorasi luar angkasa merupakan
+                        salah satu bidang yang terus mengalami
+                        perkembangan.
+                    </p>
+
+                    <p>
+                        Berbagai negara dan perusahaan
+                        mengembangkan teknologi untuk
+                        mempelajari lingkungan luar bumi.
+                    </p>
+
+                    <p>
+                        Satelit, teleskop luar angkasa,
+                        roket, robot penjelajah, dan berbagai
+                        instrumen ilmiah digunakan untuk
+                        mengumpulkan informasi mengenai
+                        planet, bintang, dan objek luar
+                        angkasa lainnya.
+                    </p>
+
+                    <p>
+                        Teknologi luar angkasa juga memberikan
+                        manfaat bagi kehidupan di bumi,
+                        termasuk komunikasi, navigasi,
+                        pemantauan cuaca, dan penelitian
+                        lingkungan.
+                    </p>
+
+                    <p>
+                        Perkembangan teknologi tersebut
+                        membuat manusia dapat terus
+                        memperluas pengetahuan tentang
+                        alam semesta.
+                    </p>
+
+                `;
+
+            }
+
+
+            modal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        /* ================= TUTUP ARTIKEL ================= */
+
+        function closeArticle() {
+
+            const modal =
+                document.getElementById(
+                    "articleModal"
+                );
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+
+        }
+
+
+        /* ================= KLIK DI LUAR MODAL ================= */
+
+        document
+            .getElementById("articleModal")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        closeArticle();
+
+                    }
+
+                }
+            );
+
+
+        /* ================= TOMBOL ESC ================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeArticle();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
